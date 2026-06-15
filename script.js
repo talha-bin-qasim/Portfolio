@@ -173,24 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // ─── SKILL BARS ANIMATION ────────────────────────
-  const skillBars = document.querySelectorAll('.skill-bar-fill');
 
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const width = bar.getAttribute('data-width');
-        bar.style.width = width + '%';
-        bar.classList.add('animated');
-        skillObserver.unobserve(bar);
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  skillBars.forEach(bar => skillObserver.observe(bar));
 
   // ─── STAT COUNTER ANIMATION ──────────────────────
   const statNumbers = document.querySelectorAll('.stat-number');
